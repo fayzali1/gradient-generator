@@ -18,7 +18,10 @@ const Home = () => {
 export default Home;
 const useStyles = makeStyles((theme) => ({
   homeRoot: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: "#FAACA8",
+    backgroundImage: " linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%)",
+
+    // backgroundColor: theme.palette.primary.main,
     width: "100%",
     height: "100vh",
     display: "grid",
