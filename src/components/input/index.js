@@ -1,10 +1,10 @@
 import { makeStyles } from "@material-ui/core";
 
-const Input = () => {
+const Input = (props) => {
   const classes = useStyles();
   return (
     <>
-      <input type="color" className={classes.input} />
+      <input type="color" className={classes.input} {...props} />
     </>
   );
 };
