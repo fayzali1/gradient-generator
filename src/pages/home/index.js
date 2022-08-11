@@ -1,4 +1,4 @@
-import { Box, makeStyles } from "@material-ui/core";
+import { Box, Fade, makeStyles } from "@material-ui/core";
 import Main from "../../components/main";
 import SplashScreen from "../../components/splashScreen";
 
@@ -7,7 +7,9 @@ const Home = () => {
   return (
     <Box className={classes.homeRoot}>
       <SplashScreen>
-        <Main />
+        <Fade in={true} timeout={2000}>
+          <Main />
+        </Fade>
       </SplashScreen>
     </Box>
   );

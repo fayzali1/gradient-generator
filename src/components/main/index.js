@@ -1,10 +1,10 @@
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import Card from "../card";
 
-const Main = () => {
+const Main = (props) => {
   const classes = useStyles();
   return (
-    <>
+    <div {...props}>
       {" "}
       <Box className={classes.headingWrapper}>
         <Typography variant="h1" className={classes.heading}>
@@ -12,7 +12,7 @@ const Main = () => {
         </Typography>
       </Box>
       <Card />
-    </>
+    </div>
   );
 };
 
