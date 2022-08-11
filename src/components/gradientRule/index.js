@@ -57,8 +57,10 @@ const useStyles = makeStyles(() => ({
     padding: 5,
     borderRadius: 5,
     cursor: "pointer",
+    transition: "0.25s",
     "&:hover": {
-      background: "#aad6ee",
+      background: "#769baf",
+      transition: "0.25s",
     },
   },
 }));
