@@ -5,46 +5,26 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import GradientBox from "../gradientBox";
-import { useState } from "react";
+import { useReducer } from "react";
 import GradientForm from "../form";
-import { useFormik } from "formik";
+import { initialState, reducer } from "./reducer";
+import GradientRule from "../gradientRule";
 const Card = () => {
   const classes = useStyles();
-  const formik = useFormik({
-    initialValues: {
-      primaryColor: "#80D0C7",
-      secondaryColor: "#0093E9",
-      angle: 0,
-      percentage: 40,
-    },
-  });
-  const [angle, setAngle] = useState(0);
-  const [colorPercentage, setColorPercentage] = useState({
-    primary: 100,
-    secondary: 0,
-  });
-
-  const handlePercentageChange = (e, value) => {
-    setColorPercentage((prev) => ({
-      ...prev,
-      primary: value,
-      secondary: 100 - value,
-    }));
-  };
-  const handleAngleChange = (e, value) => {
-    setAngle(value);
-  };
-
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <MuiCard elevation={20} className={classes.root}>
       <Box className={classes.cardContentWrapper}>
         <CardContent>
           <Box className={classes.inputsWrapper}>
-            <GradientBox formik={formik} />
+            <GradientBox state={state} />
           </Box>
         </CardContent>
         <CardContent>
-          <GradientForm formik={formik} />
+          <GradientForm dispatch={dispatch} state={state} />
+        </CardContent>
+        <CardContent>
+          <GradientRule state={state} />
         </CardContent>
       </Box>
     </MuiCard>
@@ -63,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     background: theme.palette.secondary.main,
-    width: 400,
+    width: 450,
     height: "70vh",
   },
   inputsWrapper: {

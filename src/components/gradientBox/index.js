@@ -1,16 +1,15 @@
 import { makeStyles } from "@material-ui/core";
 
-const GradientBox = ({ formik }) => {
+const GradientBox = ({
+  state: { primaryColor, secondaryColor, angle, percentage },
+}) => {
   const classes = useStyles();
-  const { primaryColor, secondaryColor, angle, percentage } = formik.values;
 
   return (
     <div
       className={classes.gradientBox}
       style={{
-        background: `linear-gradient(${angle}deg,${primaryColor} ${percentage}%,${secondaryColor} ${
-          100 - percentage
-        }%)`,
+        background: `linear-gradient(${angle}deg,${primaryColor} ${percentage[0]}%,${secondaryColor} ${percentage[1]}%)`,
       }}
     />
   );
