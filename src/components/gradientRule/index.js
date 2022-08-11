@@ -26,15 +26,17 @@ const GradientRule = ({
     setOpen(true);
   };
   return (
-    <Box className={classes.container}>
-      <code>{rule}</code>
-      <button onClick={handleRuleCopy} className={classes.button}>
-        Copy
-      </button>
+    <>
+      <Box className={classes.container}>
+        <code>{rule}</code>
+        <button onClick={handleRuleCopy} className={classes.button}>
+          Copy
+        </button>
+      </Box>
       <Snackbar open={open} autoHideDuration={2000} onClose={handleSnackClose}>
         <MuiAlert severity="success">{alertMessage}</MuiAlert>
       </Snackbar>
-    </Box>
+    </>
   );
 };
 
