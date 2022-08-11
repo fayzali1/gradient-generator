@@ -1,16 +1,15 @@
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import Card from "../../components/card";
+import Main from "../../components/main";
+import SplashScreen from "../../components/splashScreen";
 
 const Home = () => {
   const classes = useStyles();
   return (
     <Box className={classes.homeRoot}>
-      <Box className={classes.headingWrapper}>
-        <Typography variant="h1" className={classes.heading}>
-          gradient
-        </Typography>
-      </Box>
-      <Card />
+      <SplashScreen>
+        <Main />
+      </SplashScreen>
     </Box>
   );
 };
@@ -27,14 +26,5 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     placeContent: "center",
     textAlign: "center",
-  },
-  heading: {
-    background: "linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44)",
-    "-webkit-text-fill-color": "transparent",
-    "-webkit-background-clip": "text",
-    padding: 10,
-  },
-  headingWrapper: {
-    paddingBottom: 20,
   },
 }));
