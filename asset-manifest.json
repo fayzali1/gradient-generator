@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gradient-generator/static/css/main.93042921.css",
+    "main.js": "/gradient-generator/static/js/main.f900cea8.js",
+    "static/js/787.3a113a4e.chunk.js": "/gradient-generator/static/js/787.3a113a4e.chunk.js",
+    "index.html": "/gradient-generator/index.html",
+    "main.93042921.css.map": "/gradient-generator/static/css/main.93042921.css.map",
+    "main.f900cea8.js.map": "/gradient-generator/static/js/main.f900cea8.js.map",
+    "787.3a113a4e.chunk.js.map": "/gradient-generator/static/js/787.3a113a4e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93042921.css",
+    "static/js/main.f900cea8.js"
+  ]
+}
