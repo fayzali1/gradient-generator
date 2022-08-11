@@ -1,16 +1,22 @@
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import Typing from "react-typing-animation";
 
-const LoadingMessage = ({ setLoading }) => {
+const LoadingMessage = ({ setLoading, ...props }) => {
   const classes = useStyles();
+  const handleFinishTyping = () => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  };
   return (
-    <Box>
-      <Typing speed={200} onFinishedTyping={() => setLoading(false)}>
+    <Box {...props}>
+      <Typing speed={200} onFinishedTyping={handleFinishTyping}>
         <Typography variant="h1" className={classes.heading}>
           gradient
         </Typography>
         {<Typing.Delay ms={1000} />}
-        <Typography variant="h4">Create cool gradients here!</Typography>
+        {<Typing.Speed ms={100} />}
+        <Typography variant="h4">Create your own gradient!</Typography>
       </Typing>
     </Box>
   );
