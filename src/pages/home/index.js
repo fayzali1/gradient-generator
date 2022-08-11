@@ -1,5 +1,4 @@
-import { Box, makeStyles, Typography } from "@material-ui/core";
-import Card from "../../components/card";
+import { Box, makeStyles } from "@material-ui/core";
 import Main from "../../components/main";
 import SplashScreen from "../../components/splashScreen";
 
